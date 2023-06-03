@@ -128,3 +128,15 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.lib
+.idea
+.dist
+node_modules
+
+.lib/*
+.dist/*
+.idea/*
+node_modules/*
+build/*
+.idea
