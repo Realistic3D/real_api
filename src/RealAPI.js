@@ -23,8 +23,18 @@ export async function Scene(scene, camera) {
     const buffer = await new Promise((resolve, reject) => {
         exporter.parse(scene, (glb) => resolve(glb), (err) => reject(err), options);
     });
+    resetScene(areaLights, oldParent, realName, scene, camera);
     // return new Blob([buffer], {type: 'model/gltf-binary'});
     return new Blob([buffer], {type: 'application/octet-stream'});
+}
+
+function resetScene(areaLights, oldParent, realName, scene, camera) {
+    if(oldParent) oldParent.add(camera);
+    else scene.remove(camera);
+    camera.name = realName;
+    for (const areaLight of areaLights) {
+        scene.add(areaLight);
+    }
 }
 
 function parseLights(areaLights) {
