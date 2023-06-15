@@ -1,6 +1,6 @@
 {
   "name": "real_api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "This is a RealAPI plugin for three.js rendering. Now you can render three.js scene at runtime by using API calls.",
   "main": "index.js",
   "scripts": {

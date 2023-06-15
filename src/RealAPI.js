@@ -64,7 +64,6 @@ function parseLights(areaLights) {
             if(key === "color") group.name = `${key}|${parseColor(value)}`;
             else group.name = `${key}|${JSON.stringify(value)}`;
             areaLight.add(group);
-            console.log(group.name);
         }
         parent.add(areaLight);
     }
